@@ -8,6 +8,11 @@ export const Img = styled.img`
 `
 
 export const GridContainer = styled.section`
+${'' /* display: flex; */}
+${'' /* flex-direction: row; */}
+${'' /* flex-wrap: wrap; */}
+${'' /* align-items: stretch;
+justify-content: center; */}
 display: grid;
 grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 padding: 3rem;
@@ -23,6 +28,7 @@ row-gap: 3rem;
 
 `
 export const BlogCard = styled.div`
+  
   border-radius: 10px;
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   text-align: center;
