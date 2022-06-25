@@ -40,7 +40,7 @@ export const projects = [
 export const TimeLineData = [
   { year: 2019, text: 'Started BE in Electronics and Computer Engineering', },
   { year: 2020, text: '3 star coder at Code Chef', },
-  // { year: 2021, text: 'Learn', },
+  { year: 2022, text: 'SEP Summer Intern at JPMC', },
   // { year: 2020, text: 'Shared my projects with the world', },
   // { year: 2023, text: '', },
 ];

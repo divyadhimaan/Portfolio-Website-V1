@@ -54,10 +54,10 @@ const Timeline = () => {
           &nbsp;Thapar Institute of Engineering and Technology.
         </Link>
         <br /><br/>
-        Recently she got an an offer for Summer Internship at 
+        Recently joined
         <Link href="https://www.jpmorganchase.com/" >
           &nbsp;JP Morgan Chase and Co.
-        </Link> under Software Engineering Program upcoming in 2022.
+        </Link> as a Summer SEP intern 2022.
         <br/><br/>
         Enthusiastic programmer eager to contribute to team success through hard work, attention to detail, and excellent organizational skills. 
         <br/>With a clear understanding of Data Structure and Algorithms and training in Competitive programming she's ready to work in a dynamic environment that offers opportunities to grow and learn new things.
