@@ -1,9 +1,23 @@
-import React, { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
-import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
-import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { TimeLineData } from '../../constants/constants';
-
+import React, { useState, useRef, useEffect } from "react";
+import Link from "next/link";
+import {
+  CarouselButton,
+  CarouselButtonDot,
+  CarouselButtons,
+  CarouselContainer,
+  CarouselItem,
+  CarouselItemImg,
+  CarouselItemText,
+  CarouselItemTitle,
+  CarouselMobileScrollNode,
+} from "./TimeLineStyles";
+import {
+  Section,
+  SectionDivider,
+  SectionText,
+  SectionTitle,
+} from "../../styles/GlobalComponents";
+import { TimeLineData } from "../../constants/constants";
 
 const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
 
@@ -12,55 +26,69 @@ const Timeline = () => {
   const carouselRef = useRef();
 
   const scroll = (node, left) => {
-    return node.scrollTo({ left, behavior: 'smooth' });
-  }
+    return node.scrollTo({ left, behavior: "smooth" });
+  };
 
   const handleClick = (e, i) => {
     e.preventDefault();
 
     if (carouselRef.current) {
-      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / TimeLineData.length));
-      
+      const scrollLeft = Math.floor(
+        carouselRef.current.scrollWidth * 0.7 * (i / TimeLineData.length)
+      );
+
       scroll(carouselRef.current, scrollLeft);
     }
-  }
+  };
 
   const handleScroll = () => {
     if (carouselRef.current) {
-      const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * TimeLineData.length);
+      const index = Math.round(
+        (carouselRef.current.scrollLeft /
+          (carouselRef.current.scrollWidth * 0.7)) *
+          TimeLineData.length
+      );
 
       setActiveItem(index);
     }
-  }
+  };
 
   // snap back to beginning of scroll when window is resized
   // avoids a bug where content is covered up if coming from smaller screen
   useEffect(() => {
     const handleResize = () => {
       scroll(carouselRef.current, 0);
-    }
+    };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
   }, []);
 
   return (
     <Section id="about">
       <SectionTitle>About Me</SectionTitle>
       <SectionText>
-        Divya is a self taught Web Developer and a Graphic Designer.
-        She is exploring new technologies and developing software solutions and quick hacks.
-        Currently, She is Studying Electronics and Computers Engineering at 
-        <Link href="https://thapar.edu/" >
+        Divya is a self taught Web Developer and a Graphic Designer. She is
+        exploring new technologies and developing software solutions and quick
+        hacks. Currently, She is Studying Electronics and Computers Engineering
+        at
+        <Link href="https://thapar.edu/">
           &nbsp;Thapar Institute of Engineering and Technology.
         </Link>
-        <br /><br/>
-        Recently joined
-        <Link href="https://www.jpmorganchase.com/" >
+        <br />
+        <br />
+        Joined
+        <Link href="https://www.jpmorganchase.com/">
           &nbsp;JP Morgan Chase and Co.
-        </Link> as a Summer SEP intern 2022.
-        <br/><br/>
-        Enthusiastic programmer eager to contribute to team success through hard work, attention to detail, and excellent organizational skills. 
-        <br/>With a clear understanding of Data Structure and Algorithms and training in Competitive programming she's ready to work in a dynamic environment that offers opportunities to grow and learn new things.
+        </Link>{" "}
+        as a Summer SEP intern 2022.
+        <br />
+        <br />
+        Enthusiastic programmer eager to contribute to team success through hard
+        work, attention to detail, and excellent organizational skills.
+        <br />
+        With a clear understanding of Data Structure and Algorithms and training
+        in Competitive programming she's ready to work in a dynamic environment
+        that offers opportunities to grow and learn new things.
         {/* Tech Stack
 💻   C++ | MATLAB
 🌐   HTML5 | CSS3 | JavaScript | Bootstrap | Node.js | Express.js | React
@@ -72,12 +100,15 @@ const Timeline = () => {
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
           {TimeLineData.map((item, index) => (
-            <CarouselMobileScrollNode key={index} final={index===TOTAL_CAROUSEL_COUNT - 1}>
+            <CarouselMobileScrollNode
+              key={index}
+              final={index === TOTAL_CAROUSEL_COUNT - 1}
+            >
               <CarouselItem
                 index={index}
                 id={`carousel__item-${index}`}
                 active={activeItem}
-                onClick={(e) => handleClick(e,index)}
+                onClick={(e) => handleClick(e, index)}
               >
                 <CarouselItemTitle>
                   {item.year}
@@ -86,7 +117,8 @@ const Timeline = () => {
                     height="6"
                     viewBox="0 0 208 6"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
                       fill-rule="evenodd"
                       clip-rule="evenodd"
@@ -101,7 +133,8 @@ const Timeline = () => {
                         y1="0.5"
                         x2="208"
                         y2="0.500295"
-                        gradientUnits="userSpaceOnUse">
+                        gradientUnits="userSpaceOnUse"
+                      >
                         <stop stop-color="white" />
                         <stop
                           offset="0.79478"
@@ -124,10 +157,10 @@ const Timeline = () => {
             key={index}
             index={index}
             active={activeItem}
-            onClick={(e) => handleClick(e,index)}
+            onClick={(e) => handleClick(e, index)}
             type="button"
           >
-            <CarouselButtonDot active={activeItem}/>
+            <CarouselButtonDot active={activeItem} />
           </CarouselButton>
         ))}
       </CarouselButtons>

@@ -1,9 +1,26 @@
-import React from 'react';
-import { DiFirebase, DiReact, DiPhotoshop } from 'react-icons/di';
-import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
+import React from "react";
+import {
+  DiFirebase,
+  DiReact,
+  DiPhotoshop,
+  IoLanguageSharp,
+} from "react-icons/di";
 
-const Technologies = () =>  (
+import {
+  Section,
+  SectionDivider,
+  SectionText,
+  SectionTitle,
+} from "../../styles/GlobalComponents";
+import {
+  List,
+  ListContainer,
+  ListItem,
+  ListParagraph,
+  ListTitle,
+} from "./TechnologiesStyles";
+
+const Technologies = () => (
   <Section id="tech">
     <SectionDivider />
     <br />
@@ -13,29 +30,41 @@ const Technologies = () =>  (
     </SectionText>
     <List>
       <ListItem>
-        <DiReact size="3rem"/>
+        <IoLanguageSharp size="3rem" />
+        <ListContainer>
+          <ListTitle>Languages</ListTitle>
+          <ListParagraph>
+            {/* Experience with <br /> */}
+            C/C++ <br />
+            Python
+          </ListParagraph>
+        </ListContainer>
+      </ListItem>
+      <ListItem>
+        <DiReact size="3rem" />
         <ListContainer>
           <ListTitle>Front-End</ListTitle>
           <ListParagraph>
             {/* Experience with <br /> */}
             React.js <br />
+            Flask <br />
             Bootstrap
           </ListParagraph>
         </ListContainer>
       </ListItem>
       <ListItem>
-        <DiFirebase size="3rem"/>
+        <DiFirebase size="3rem" />
         <ListContainer>
           <ListTitle>Back-End</ListTitle>
           <ListParagraph>
             {/* Experience with <br /> */}
-            Node <br />  
+            Node <br />
             MongoDB
           </ListParagraph>
         </ListContainer>
       </ListItem>
       <ListItem>
-        <DiPhotoshop size="3rem"/>
+        <DiPhotoshop size="3rem" />
         <ListContainer>
           <ListTitle>Graphic Designer</ListTitle>
           <ListParagraph>
