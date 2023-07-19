@@ -23,6 +23,7 @@ const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
 
 const Timeline = () => {
   const [activeItem, setActiveItem] = useState(0);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const carouselRef = useRef();
 
   const scroll = (node, left) => {
@@ -64,39 +65,39 @@ const Timeline = () => {
   }, []);
 
   return (
-    <Section id="about">
+    <Section id="about" style={{ padding: "0 30px 0 30px" }}>
       <SectionTitle>About Me</SectionTitle>
       <SectionText>
-        Divya is a self taught Web Developer and a Graphic Designer. She is
-        exploring new technologies and developing software solutions and quick
-        hacks. Currently, She is Studying Electronics and Computers Engineering
-        at
+        Meet Divya, a self-taught Web Developer and recently graduated under
+        Electronics and Computers Engineering program at
         <Link href="https://thapar.edu/">
           &nbsp;Thapar Institute of Engineering and Technology.
         </Link>
         <br />
         <br />
-        Joined
+        During the summer of 2022, Divya left a strong impression as a Software
+        Engineering Intern at{" "}
         <Link href="https://www.jpmorganchase.com/">
-          &nbsp;JP Morgan Chase and Co.
+          &nbsp;JPMorgan Chase and Co.
         </Link>{" "}
-        as a Summer SEP intern 2022.
+        , showcasing her hard work, attention to detail, and remarkable
+        organizational skills. In 2022, Proficient in Data Structures and
+        Algorithms with training in Competitive Programming, she's driven to
+        excel in a dynamic environment.
         <br />
         <br />
-        Enthusiastic programmer eager to contribute to team success through hard
-        work, attention to detail, and excellent organizational skills.
-        <br />
-        With a clear understanding of Data Structure and Algorithms and training
-        in Competitive programming she's ready to work in a dynamic environment
-        that offers opportunities to grow and learn new things.
-        {/* Tech Stack
-💻   C++ | MATLAB
-🌐   HTML5 | CSS3 | JavaScript | Bootstrap | Node.js | Express.js | React
-🛢   MySQL | MongoDB | Mongoose
-⚙️   Git | Github
-🔧   Visual Studio Code | Atom
-🖥   Illustrator | Photoshop */}
+        Having had a productive summer internship, Divya rejoined JPMorgan Chase
+        and Co. in January 2023 as a Software Engineering Program (SEP) intern,
+        eager to continue her journey with the exceptional organization.
+        <br /> <br />
+        Now, in July 2023, she proudly joined the firm as a Software Developer
+        1, embarking on a new chapter in her career. With her passion,
+        dedication, and valuable skills, Divya is poised to create exceptional
+        digital experiences and contribute significantly to her team's success.
+        As she ventures forward, she remains committed to continuous learning
+        and growth, embracing every opportunity that comes her way.
       </SectionText>
+
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
           {TimeLineData.map((item, index) => (
