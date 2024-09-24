@@ -62,6 +62,7 @@ export const SectionText = styled.p`
   max-width: 800px;
   font-size: 24px;
   line-height: 40px;
+  margin-top: 20px;
   font-weight: 300;
   padding-bottom: 3.6rem;
   color: rgba(255, 255, 255, 0.5);

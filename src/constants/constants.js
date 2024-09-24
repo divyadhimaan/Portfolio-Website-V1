@@ -41,16 +41,12 @@ export const projects = [
 ];
 
 export const TimeLineData = [
-  {
-    year: "July 2019",
-    text: "Started BE in Electronics and Computer Engineering",
-  },
   { year: "June 2022", text: "Summer Intern at JPMorgan Chase and Co." },
   {
     year: "Jan 2023",
     text: "Software Engineer Intern at JPMorgan Chase and Co.",
   },
-  { year: "July 2023", text: "Software Developer 1 at JPMorgan Chase and Co." },
+  { year: "July 2023", text: "Software Developer 1 at JPMC" },
 
   // { year: 2020, text: 'Shared my projects with the world', },
   // { year: 2023, text: '', },

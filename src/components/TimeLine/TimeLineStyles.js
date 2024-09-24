@@ -8,6 +8,7 @@ export const CarouselContainer = styled.ul`
   list-style:none;
   display: flex;
   justify-content: space-between; 
+  margin: 30px;
   /* overflow-x: hidden; */
 
   margin-left: 32px;

@@ -68,34 +68,28 @@ const Timeline = () => {
     <Section id="about" style={{ padding: "0 30px 0 30px" }}>
       <SectionTitle>About Me</SectionTitle>
       <SectionText>
-        Meet Divya, a self-taught Web Developer and recently graduated under
-        Electronics and Computers Engineering program at
-        <Link href="https://thapar.edu/">
-          &nbsp;Thapar Institute of Engineering and Technology.
-        </Link>
+        Hey there! I’m Divya, a full-stack software developer driven by the
+        thrill of turning ideas into dynamic, responsive web applications.
         <br />
         <br />
-        During the summer of 2022, Divya left a strong impression as a Software
-        Engineering Intern at{" "}
-        <Link href="https://www.jpmorganchase.com/">
-          &nbsp;JPMorgan Chase and Co.
-        </Link>{" "}
-        , showcasing her hard work, attention to detail, and remarkable
-        organizational skills. In 2022, Proficient in Data Structures and
-        Algorithms with training in Competitive Programming, she's driven to
-        excel in a dynamic environment.
+        With over a year of experience, I’ve honed my skills in building clean,
+        scalable, and efficient code using a wide range of technologies like
+        Python, Java, JavaScript, React, and Node.js.
+        <br />
+        I’ve had the opportunity to work on exciting projects in the fintech
+        industry, where I thrive in collaborative settings that challenge me to
+        think creatively and solve complex problems.
         <br />
         <br />
-        Having had a productive summer internship, Divya rejoined JPMorgan Chase
-        and Co. in January 2023 as a Software Engineering Program (SEP) intern,
-        eager to continue her journey with the exceptional organization.
-        <br /> <br />
-        Now, in July 2023, she proudly joined the firm as a Software Developer
-        1, embarking on a new chapter in her career. With her passion,
-        dedication, and valuable skills, Divya is poised to create exceptional
-        digital experiences and contribute significantly to her team's success.
-        As she ventures forward, she remains committed to continuous learning
-        and growth, embracing every opportunity that comes her way.
+        I’m passionate about staying on top of emerging trends in web
+        development, cloud technologies, and best practices—constantly pushing
+        myself to grow and learn.
+        <br />
+        <br />
+        Beyond the world of code, I find joy in exploring hiking trails,
+        contributing to open-source communities, and expressing my creativity
+        through painting. Feel free to check out my portfolio or drop me a
+        message if you’re interested in collaborating. I’d love to connect! ♡
       </SectionText>
 
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>

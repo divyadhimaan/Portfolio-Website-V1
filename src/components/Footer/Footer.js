@@ -44,8 +44,8 @@ const Footer = () => {
       <SocialIconsContainer>
         <CompanyContainer>
           <Slogan>
-            <AiOutlineCopyrightCircle /> Divya Dhiman. All rights reserved. 2021
-            v1.2
+            <AiOutlineCopyrightCircle /> Divya Dhiman. All rights reserved. 2024
+            v1.3
           </Slogan>
         </CompanyContainer>
         <SocialContainer>

@@ -19,12 +19,11 @@ const Hero = () => (
         </SectionText>
       </SectionTitle>
       <SectionText>
-        I'm a software engineer specializing in building exceptional digital
-        experiences. I'm a Web Developer. <br />
-        Welcome to my little slice of the internet! <br /> — I hope you find
-        something useful! <br />
-        If you're curious, read more
-        <Link href="#about">&nbsp;about me.</Link>
+      I'm a software engineer passionate about crafting exceptional digital experiences. <br />
+        Welcome to my corner of the web—take a look around and let’s build something amazing together!
+        <br/>
+        {/* If you're curious, read more
+        <Link href="#about">&nbsp;about me.</Link> */}
       </SectionText>
       {/* <Button onClick={() => window.location = 'https://google.com'}>Learn more</Button> */}
     </LeftSection>
