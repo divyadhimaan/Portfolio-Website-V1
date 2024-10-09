@@ -5,6 +5,7 @@ import {
   AiFillLinkedin,
   AiFillMail,
 } from "react-icons/ai";
+import { SiLeetcode } from "react-icons/si";
 import { IoDocumentAttach } from "react-icons/io5";
 
 import { SocialIcons } from "../Header/HeaderStyles";
@@ -54,6 +55,9 @@ const Footer = () => {
             target="_blank"
           >
             <AiFillMail size="3rem" />
+          </SocialIcons>
+          <SocialIcons href="https://leetcode.com/u/divyadhimaan/" target="_blank" rel="noopener noreferrer">
+            <SiLeetcode size="3rem" />
           </SocialIcons>
           <SocialIcons href="https://github.com/divyadhimaan">
             <AiFillGithub size="3rem" />

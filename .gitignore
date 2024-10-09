@@ -12,6 +12,9 @@
 /.next/
 /out/
 
+#images - screenshots
+/images
+
 # production
 /build
 

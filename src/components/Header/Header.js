@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { AiFillGithub, AiFillLinkedin, AiFillMail } from "react-icons/ai";
+import { SiLeetcode } from "react-icons/si";
 import { IoDocumentAttach } from "react-icons/io5";
 
 import { DiCssdeck } from "react-icons/di";
@@ -55,6 +56,9 @@ const Header = () => (
         target="_blank"
       >
         <AiFillMail size="3rem" />
+      </SocialIcons>
+      <SocialIcons href="https://leetcode.com/u/divyadhimaan/" target="_blank" rel="noopener noreferrer">
+        <SiLeetcode size="3rem" />
       </SocialIcons>
       <SocialIcons href="https://github.com/divyadhimaan" target="_blank" rel="noopener noreferrer">
         <AiFillGithub size="3rem" />
