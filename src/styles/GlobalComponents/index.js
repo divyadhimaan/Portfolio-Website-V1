@@ -295,3 +295,108 @@ export const LinkIconImg = styled.div`
     height: ${({ large }) => (large ? "32px" : "16px")};
   }
 `;
+
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  // padding: 10px;
+  border-radius: 12px;
+`;
+
+export const FormLabel = styled.label`
+  font-size: 18px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  // width: 100%;
+  color: rgba(255, 255, 255, 0.75);
+  // display: block;
+`;
+export const FormRow = styled.div`
+  display: flex;
+  justify-content: center; /* Centers the inputs horizontally */
+  gap: 20px;              /* Adds space between the inputs */
+  width: 100%;            /* Make the group full width */
+`;
+
+export const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column; /* Stack the label and input vertically */
+  width: 100%; /* Adjust the width to fit side by side */
+  margin-bottom: 20px;
+`;
+
+export const FormInput = styled.input`
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: #1f2937;
+  color: white;
+  font-size: 16px;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid #00dbd8;
+  }
+`;
+
+export const FormButton = styled.button`
+  padding: 12px 24px;
+  border: none;
+  margin: 10px;
+  border-radius: 50px;
+  // background: linear-gradient(270deg, #00dbd8 0%, #b133ff 100%);
+  background: white;
+  color: black;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.4s ease;
+
+  &:hover {
+    background: #00dbd8;
+  }
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+
+export const OptionButtonGroup = styled.div`
+  display: flex;
+  flex-wrap: wrap;   /* To make buttons flow to the next line if needed */
+  gap: 10px;         /* Gap between buttons */
+`;
+
+export const OptionButton = styled.button`
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  background: ${(props) => (props.selected ? "#00dbd8" : "transparent")};
+  color: ${(props) => (props.selected ? "#0f1624" : "white")};
+  border: 1px solid ${(props) => (props.selected ? "#00dbd8" : "rgba(255, 255, 255, 0.33)")};
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.4s ease;
+
+  &:hover {
+    background: ${(props) => (props.selected ? "#00dbd8" : "#e0e0e0")};
+    color: #0f1624;
+  }
+
+  &:focus {
+    outline: none;
+  }
+`;

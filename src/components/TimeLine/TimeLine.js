@@ -26,8 +26,12 @@ const Timeline = () => {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const carouselRef = useRef();
 
+  const scrollRef = useRef(null); // Create a ref
+
   const scroll = (node, left) => {
-    return node.scrollTo({ left, behavior: "smooth" });
+    if (node) {
+      return node.scrollTo({ left, behavior: "smooth" });
+    }
   };
 
   const handleClick = (e, i) => {
@@ -92,7 +96,7 @@ const Timeline = () => {
         message if you’re interested in collaborating. I’d love to connect! ♡
       </SectionText>
 
-      <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
+      {/* <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
           {TimeLineData.map((item, index) => (
             <CarouselMobileScrollNode
@@ -158,7 +162,7 @@ const Timeline = () => {
             <CarouselButtonDot active={activeItem} />
           </CarouselButton>
         ))}
-      </CarouselButtons>
+      </CarouselButtons> */}
       {/* <SectionDivider /> */}
     </Section>
   );

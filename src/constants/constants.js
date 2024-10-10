@@ -47,7 +47,6 @@ export const TimeLineData = [
     text: "Software Engineer Intern at JPMorgan Chase and Co.",
   },
   { year: "July 2023", text: "Software Developer 1 at JPMC" },
-
   // { year: 2020, text: 'Shared my projects with the world', },
   // { year: 2023, text: '', },
 ];
