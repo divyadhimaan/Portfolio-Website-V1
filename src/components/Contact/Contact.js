@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Section,
   SectionText,
@@ -13,11 +13,10 @@ import {
   OptionButtonGroup,
   OptionButton,
 } from "../../styles/GlobalComponents";
-import { RiSendPlaneFill } from "react-icons/ri";
 import Modal from "../Modal/Modal";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,18 +24,21 @@ const Contact = () => {
     options: [],
   });
 
+
+  const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
+  const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+  const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+
   const [isModalOpen, setIsModalOpen] = useState(false); // Modal visibility state
   const [modalMessage, setModalMessage] = useState(""); // Modal message
   const [modalType, setModalType] = useState(""); // Modal type (success or error)
 
-
   const options = [
+    "Counsel",
     "Website Design",
-    "Branding",
     "Web Development",
     "Illustration",
-    "Graphic Design",
-    "Custom",
+    "Graphic Design"
   ];
 
   const handleChange = (e) => {
@@ -47,28 +49,42 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check if any options are selected
     if (formData.options.length === 0) {
-      setModalMessage("Please select at least one option."); 
-      setModalType("error"); 
-      setIsModalOpen(true); 
-      return; // Prevent form submission if no options are selected
+      setModalMessage("Please select at least one option.");
+      setModalType("error");
+      setIsModalOpen(true); // Show error modal
+      return;
     }
 
-    // Handle form submission logic here
-    console.log("Form Data Submitted: ", formData);
+    try {
+      // Send email using EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        company_name: formData.companyName,
+        options: formData.options.join(", "),
+      };
 
-    // Show success modal
-    setModalMessage("Your form has been submitted successfully!"); 
-    setModalType("success"); 
-    setIsModalOpen(true); 
+      const response = await emailjs.send(serviceId, templateId, templateParams, userId);
+
+      if (response.status === 200) {
+        setModalMessage("Your form has been submitted successfully!");
+        setModalType("success");
+        setIsModalOpen(true); // Show success modal
+        setFormData({ name: "", email: "", companyName: "", options: [] }); // Reset form
+      }
+    } catch (error) {
+      console.log('FAILED...', error);
+      setModalMessage("There was an error sending your message. Please try again.");
+      setModalType("error");
+      setIsModalOpen(true); // Show error modal
+    }
   };
 
   const handleOptionClick = (option) => {
-    
     setFormData((prevState) => {
       const updatedOptions = prevState.options.includes(option)
         ? prevState.options.filter((opt) => opt !== option)
@@ -144,18 +160,12 @@ const Contact = () => {
           </OptionButtonGroup>
         </InputContainer>
 
-        <FormButton type="submit">
-          Let's chat
-        </FormButton>
+        <FormButton type="submit">Let's chat</FormButton>
       </Form>
 
       {/* Render the modal */}
       {isModalOpen && (
-        <Modal
-          message={modalMessage} 
-          onClose={closeModal} 
-          type={modalType} 
-        />
+        <Modal message={modalMessage} onClose={closeModal} type={modalType} />
       )}
     </Section>
   );
