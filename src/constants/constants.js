@@ -1,43 +1,26 @@
-export const projects = [
+export const projectList = [
   {
-    title: "Virtual Classroom Chat",
-    description:
-      "This is a Full Realtime Chat Application. It allows you to built scalable and custom chat applications extremely easily. We will use React for the front end, and NodeJS on the backend. It contains stream-chat-react based inbuilt components.",
-    image: "/images/chat-project.jpg",
-    tags: ["Mongo", "Express", "React", "Node", "Stream"],
-    source: "https://github.com/divyadhimaan/Virtual-Classroom-Chat",
-    visit: "https://virtual-classroom-project.netlify.app/",
+    title: "connectNGO",
+    description: "Created during a 24-hour hackathon for the NGO Way for Life, this MERN stack project bridges communication gaps among NGOs, volunteers, and organizations through a user-friendly platform with personalized dashboards.",
+    imageUrl: "/images/connectNGO.png",
+    link: "https://github.com/divyadhimaan/connectNGO",
     id: 0,
   },
   {
-    title: "Way for Life NGO",
-    description:
-      "Web Application to reduce the communication gap between NGO, Volunteers and Organizations with personal Dashboard for each portal. A web Platform where volunteers can seek the work from the organization and can select what kind of work they are insterested in on the basis of their priorities.",
-    image: "/images/NGO-project.jpg",
-    tags: ["React", "Node", "Mongo", "Socket"],
-    source: "https://github.com/divyadhimaan/Hexception-Project",
-    visit: "",
+    title: "sparkGive",
+    description: "This website, developed for the Spark Foundation, integrates Razorpay for seamless payment processing. Users can easily select the amount they wish to donate and choose from various payment methods, including UPI (Google Pay, PayTM, PhonePe), cards, UPI/QR, net banking, and ICICI Pay Later.",
+    imageUrl: "/images/sparkGive.png",
+    link: "https://github.com/divyadhimaan/sparkGive",
     id: 1,
   },
   {
-    title: "Donation App",
-    description:
-      "This website is for the Spark Foundation which includes integration of payment gateways using razorpay. An payment page is added in the website which enables user to add the amount they wanr to donate and then choose any payment method including UPI -( Google pay, PayTM, phonePe), cards, UPI/QR, Netbanking and ICICI pay later.",
-    image: "/images/Donation-app.png",
-    tags: ["React", "Payment-Gateways"],
-    source: "https://github.com/divyadhimaan/Donation-App",
-    visit: "https://my-donations-app.netlify.app/",
+    title: "campusCart",
+    description: "A comprehensive online shopping platform designed to serve students during the COVID-19 pandemic, allowing them to shop conveniently from all campus stores.",
+    imageUrl: "/images/campusCart.png",
+    link: "https://github.com/divyadhimaan/campusCart",
     id: 2,
   },
-  // {
-  //   title: 'Unichat',
-  //   description: "This is a code repository for the corresponding video tutorial. In this video, we will create a full Realtime Chat Application",
-  //   image: '/images/chat-project.jpg',
-  //   tags: ['React', 'ChatEngine', 'Firebase'],
-  //   source: 'https://google.com',
-  //   visit: 'https://google.com',
-  //   id: 3,
-  // },
+
 ];
 
 export const TimeLineData = [
