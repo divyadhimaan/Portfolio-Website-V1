@@ -7,11 +7,12 @@ import { projectList } from '../../constants/constants';
 
 const ProjectContainer = styled.div`
   display: flex;
+  // flex-wrap: wrap;
   overflow-x: auto;
   gap: 20px;
   padding: 0 20px 0 20px;
   scroll-behavior: smooth;
-  margin-bottom: 
+  margin-bottom: 40px;
 
   &::-webkit-scrollbar {
     height: 8px;
@@ -26,18 +27,38 @@ const ProjectContainer = styled.div`
 const ProjectCard = styled.div`
   position: relative;
   background: white;
-  width: 300px; /* Initial width for rectangular shape */
-  height: 400px; /* Initial height for rectangular shape */
+  width: 300px; 
+  height: 400px; 
   border-radius: 10px;
-  overflow: hidden; /* Ensure content stays inside the card */
-  flex-shrink: 0; /* Prevent shrinking */
+  overflow: hidden; 
+  flex-shrink: 0; 
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 
   &:hover {
-    width: 400px; /* Expand to square shape on hover */
-    height: 400px;
+    width: 400px; 
+  }
+
+  @media (max-width: 1200px) {
+    width: 280px;
+    height: 360px;
+  }
+
+  @media (max-width: 768px) {
+    width: 240px; /* Smaller width for mobile */
+    height: 320px;
+  }
+
+  @media (max-width: 480px) {
+    width: 200px; 
+    height: 280px;
+    &:hover {
+      width: 200px; 
+    }
+    // &:hover img {
+    //   opacity: 0; /* Hide the image */
+    // }
   }
 `;
 
@@ -52,37 +73,57 @@ const ProjectImage = styled.img`
 
 const ProjectInfo = styled.div`
   position: absolute;
-  bottom: 10px;
+  bottom: 0; 
   left: 50%;
-  transform: translateX(-50%); /* Center horizontally */
-  width: 90%; /* Adjust width as needed */
-  padding: 10px; /* Padding inside the div */
-  background: white; /* Solid white background */
-  border-radius: 10px; /* Match the card's rounded corners */
-  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
-  text-align: center; /* Center the text inside */
+  transform: translateX(-50%); 
+  width: 100%; 
+  padding: 10px;
+  background: ${(props) => `rgba(${parseInt(props.theme.colors.background1.slice(1, 3), 16)}, 
+  ${parseInt(props.theme.colors.background1.slice(3, 5), 16)}, 
+  ${parseInt(props.theme.colors.background1.slice(5, 7), 16)}, 0.8)`}; 
 
-  /* Default height for title only */
-  height: 50px; /* Adjust as needed */
+  border-radius: 0 0 10px 10px; 
+  text-align: center; 
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+
+  
+  height: 50px; 
+  
   
   /* Show full height on hover */
   ${ProjectCard}:hover & {
-    height: auto; /* Adjust for title + description */
+    height: auto;
+    background: ${(props) => `rgba(${parseInt(props.theme.colors.background1.slice(1, 3), 16)}, 
+                                  ${parseInt(props.theme.colors.background1.slice(3, 5), 16)}, 
+                                  ${parseInt(props.theme.colors.background1.slice(5, 7), 16)}, 1)`}; 
+   
+  }
+
+  @media (max-width: 480px) {
+    ${ProjectCard}:hover & {
+      opacity: 1;
+      height: 280px;
+      transition: opacity 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 `;
 
 const ProjectTitle = styled.h3`
   font-size: 20px; /* Adjusted font size for better fit */
   margin-bottom: 5px;
-  color: ${(props) => props.theme.colors.background1};
+  color: white;
 `;
 
 const ProjectDescription = styled.p`
   font-size: 14px; /* Adjusted font size for better fit */
-  color: #555; /* Changed text color for better readability */
+  color: white; /* Changed text color for better readability */
   opacity: 0; /* Hide description by default */
   transition: opacity 0.3s ease; /* Smooth transition for opacity */
-  
+  text-align: center;
   /* Show the description on hover */
   ${ProjectCard}:hover & {
     opacity: 1; /* Show the description when card is hovered */
