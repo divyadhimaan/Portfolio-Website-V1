@@ -25,10 +25,18 @@ export const Span = styled.span`
 export const Div1 = styled.div`
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
+  margin: 30px;
   flex-direction: row;
   align-content: center;
   @media ${(props) => props.theme.breakpoints.sm} {
     grid-area: 1 / 1 / 2 / 3;
+  }
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    span {
+      display: none;
+      size: 100px;
+    }
   }
 `;
 // export const Div2 = styled.div`
@@ -44,9 +52,15 @@ export const Div2 = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin: 30px;
+  gap: 3rem;
   @media ${(props) => props.theme.breakpoints.sm} {
     align-items: center;
     grid-area: 1 / 4 / 2 / 6;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -123,5 +137,40 @@ export const SocialIcons = styled.a`
     background-color: #212d45;
     transform: scale(1.2);
     cursor: pointer;
+  }
+`;
+
+
+export const HamburgerMenu = styled.div`
+  grid-area: 1 / 5 / 2 / 6;
+  padding: 12px 16px;
+  border: none;
+  margin: 10px;
+  border-radius: 50px;
+  // background: white;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  width: fit-content;
+  cursor: pointer;
+  transition: 0.4s ease;
+  display: none;
+  margin: 30px; 
+  alignItems: right;
+
+  &:hover {
+    background: #00dbd8;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+  @media (max-width: 640px) {
+    padding: 0;
+    display: block;
+  }
+  @media (max-width: 420px) {
+    padding: 0;
+    display: block;
   }
 `;

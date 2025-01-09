@@ -7,58 +7,34 @@ import { projectList } from '../../constants/constants';
 
 const ProjectContainer = styled.div`
   display: flex;
-  // flex-wrap: wrap;
-  overflow-x: auto;
+  flex-direction: column;
   gap: 20px;
   padding: 0 20px 0 20px;
-  scroll-behavior: smooth;
   margin-bottom: 40px;
-
-  &::-webkit-scrollbar {
-    height: 8px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-    border-radius: 4px;
-  }
 `;
 
 const ProjectCard = styled.div`
   position: relative;
   background: white;
-  width: 300px; 
+  width: 100%; 
   height: 400px; 
   border-radius: 10px;
   overflow: hidden; 
-  flex-shrink: 0; 
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 
-  &:hover {
-    width: 400px; 
-  }
 
   @media (max-width: 1200px) {
-    width: 280px;
     height: 360px;
   }
 
   @media (max-width: 768px) {
-    width: 240px; /* Smaller width for mobile */
     height: 320px;
   }
 
   @media (max-width: 480px) {
-    width: 200px; 
     height: 280px;
-    &:hover {
-      width: 200px; 
-    }
-    // &:hover img {
-    //   opacity: 0; /* Hide the image */
-    // }
   }
 `;
 
@@ -66,7 +42,7 @@ const ProjectImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: absolute; /* Absolute positioning to fill the card */
+  position: absolute;
   top: 0;
   left: 0;
 `;
@@ -113,20 +89,20 @@ const ProjectInfo = styled.div`
 `;
 
 const ProjectTitle = styled.h3`
-  font-size: 20px; /* Adjusted font size for better fit */
+  font-size: 20px;
   margin-bottom: 5px;
   color: white;
 `;
 
 const ProjectDescription = styled.p`
-  font-size: 14px; /* Adjusted font size for better fit */
-  color: white; /* Changed text color for better readability */
-  opacity: 0; /* Hide description by default */
-  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+  font-size: 14px; 
+  color: white; 
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
   text-align: center;
-  /* Show the description on hover */
+  
   ${ProjectCard}:hover & {
-    opacity: 1; /* Show the description when card is hovered */
+    opacity: 1; 
   }
 `;
 
@@ -156,10 +132,10 @@ const ViewButton = styled.button`
 const Projects = () => {
 
   return (
-    <Section nopadding id="projects">
-      <SectionTitle main>Featured Work</SectionTitle>
+    <Section id="projects">
+      <SectionTitle >Featured Work</SectionTitle>
       <ProjectContainer>
-        {projectList.map((project, index) => (
+        {/* {projectList.map((project, index) => (
           <ProjectCard key={index}>
             <ProjectImage src={project.imageUrl} alt={project.title} />
             <ViewButton onClick={() => window.open(project.link, "_blank")}>
@@ -170,7 +146,7 @@ const Projects = () => {
               <ProjectDescription>{project.description}</ProjectDescription>
             </ProjectInfo>
           </ProjectCard>
-        ))}
+        ))} */}
       </ProjectContainer>
     </Section>
   );

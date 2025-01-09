@@ -4,27 +4,29 @@ import {
   Section,
   SectionText,
   SectionTitle,
+  MainButton,
 } from "../../styles/GlobalComponents";
-// import Button from '../../styles/GlobalComponents/Button';
 import { LeftSection, RightSection } from "./HeroStyles";
 
 const Hero = () => (
   <Section row>
     <LeftSection>
       <SectionTitle center>
-        Hi, I am Divya.
+        hi, I am Divya.
         <br />
-        <SectionText style={{ fontWeight: "bold" }}>
-          I build things for the web.
+        <SectionText style={{ fontWeight: "bold", margin: "10px auto"}}>
+          Software Developer
         </SectionText>
       </SectionTitle>
-      <SectionText>
-      I'm a software engineer passionate about crafting exceptional digital experiences. <br />
-        Welcome to my corner of the web—take a look around and let’s build something amazing together!
+      <SectionText style={{width: "100%", margin: "20px 0"}}>
+        Welcome to my corner of the web!
         <br/>
-        {/* If you're curious, read more
-        <Link href="#about">&nbsp;about me.</Link> */}
+        Take a look around and let’s build something amazing together!
+        <br/>
       </SectionText>
+      <Link href="/about" passHref>
+        <MainButton shrink={true}>Learn more about me</MainButton>
+      </Link>
       {/* <Button onClick={() => window.location = 'https://google.com'}>Learn more</Button> */}
     </LeftSection>
     {/* <RightSection></RightSection> */}

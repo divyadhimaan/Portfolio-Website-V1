@@ -99,7 +99,7 @@ const Contact = () => {
 
 
   return (
-    <Section nopadding id="contact">
+    <Section id="contact">
       <SectionTitle main>Tell me about your idea</SectionTitle>
       {/* <SectionText>Reach out and let's chat.</SectionText> */}
 
