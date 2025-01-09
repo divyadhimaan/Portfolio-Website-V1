@@ -36,9 +36,10 @@ const Contact = () => {
   const options = [
     "Counsel",
     "Website Design",
+    "Interview Prep",
     "Web Development",
-    "Illustration",
-    "Graphic Design"
+    "Mock Interviews",
+    "Networking"
   ];
 
   const handleChange = (e) => {
@@ -99,7 +100,7 @@ const Contact = () => {
 
 
   return (
-    <Section nopadding id="contact">
+    <Section id="contact">
       <SectionTitle main>Tell me about your idea</SectionTitle>
       {/* <SectionText>Reach out and let's chat.</SectionText> */}
 

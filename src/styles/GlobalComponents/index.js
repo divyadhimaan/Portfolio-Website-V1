@@ -29,6 +29,7 @@ export const SectionTitle = styled.h2`
   font-size: ${(props) => (props.main ? "65px" : "56px")};
   line-height: ${(props) => (props.main ? "72px" : "56px")};
   width: max-content;
+  text-align: center;
   max-width: 100%;
   background: linear-gradient(
     121.57deg,
@@ -37,29 +38,34 @@ export const SectionTitle = styled.h2`
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 16px;
-  padding: ${(props) => (props.main ? "58px 0 16px" : "0")};
+  // margin-bottom: 16px;
+  margin: 30px auto;
+
+  padding: ${(props) => (props.main ? "40px 0 16px" : "0")};
 
   @media ${(props) => props.theme.breakpoints.md} {
     font-size: ${(props) => (props.main ? "56px" : "48px")};
     line-height: ${(props) => (props.main ? "56px" : "48px")};
-    margin-bottom: 12px;
+    // margin-bottom: 12px;
+    margin: 20px auto;
     padding: ${(props) => (props.main ? "40px 0 12px" : "0")};
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
     font-size: 32px;
     line-height: 40px;
+    margin: 20px;
     font-size: ${(props) => (props.main ? "28px" : "32px")};
     line-height: ${(props) => (props.main ? "32px" : "40px")};
-    margin-bottom: 8px;
+    margin: 8px auto;
     padding: ${(props) => (props.main ? "16px 0 8px" : "0")};
     max-width: 100%;
   }
 `;
 
 export const SectionText = styled.p`
-  max-width: 800px;
+  width: max-content;
+  max-width: 100%;
   font-size: 24px;
   line-height: 40px;
   margin-top: 20px;
@@ -75,9 +81,15 @@ export const SectionText = styled.p`
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
+    max-width: 100%;
     font-size: 16px;
     line-height: 24px;
-    padding-bottom: 16px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    text-align: center;
+    padding:0 10px;
+    margin: 20px auto;
+    word-wrap: break-word;
   }
 `;
 
@@ -169,6 +181,17 @@ export const SecondaryBtn = styled.button`
     width: 100%;
     font-size: 14px;
     line-height: 16px;
+  }
+`;
+
+export const BoldText = styled.span`
+  font-weight: bold;
+  font-size: 3.5rem; /* Adjust the size as needed */
+  color: white; /* Adjust the color as needed */
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+    margin: auto;
   }
 `;
 
@@ -296,7 +319,6 @@ export const LinkIconImg = styled.div`
   }
 `;
 
-
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -318,15 +340,21 @@ export const FormLabel = styled.label`
 export const FormRow = styled.div`
   display: flex;
   justify-content: center; /* Centers the inputs horizontally */
-  gap: 20px;              /* Adds space between the inputs */
-  width: 100%;            /* Make the group full width */
+  gap: 20px; /* Adds space between the inputs */
+  width: 100%; /* Make the group full width */
+
+  @media (max-width: 640px) {
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 0;
+  }
 `;
 
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column; /* Stack the label and input vertically */
   width: 100%; /* Adjust the width to fit side by side */
-  margin-bottom: 20px;
+  // margin-bottom: 10px;
 `;
 
 export const FormInput = styled.input`
@@ -349,12 +377,18 @@ export const FormInput = styled.input`
   }
 `;
 
-export const FormButton = styled.button`
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
+
+export const MainButton = styled.button`
   padding: 12px 24px;
   border: none;
-  margin: 10px;
+  margin: 10px 0;
   border-radius: 50px;
-  // background: linear-gradient(270deg, #00dbd8 0%, #b133ff 100%);
   background: white;
   color: black;
   align-items: center;
@@ -370,13 +404,100 @@ export const FormButton = styled.button`
   &:focus {
     outline: none;
   }
+
+  @media (max-width: 640px) {
+    margin: 10px auto;
+    font-size: 14px;
+    width: 60%;
+    padding: 10px 16px;
+  }
 `;
 
+export const FormButton = styled.button`
+  padding: 12px 24px;
+  border: none;
+  margin: 15px;
+  border-radius: 50px;
+  background: white;
+  color: black;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.4s ease;
+
+  &:hover {
+    background: #00dbd8;
+  }
+
+  &:focus {
+    outline: none;
+  }
+  @media (max-width: 640px) {
+    font-size: 12px;
+    padding: 10px 18px;
+  }
+
+`;
+
+export const HamburgerMenu = styled.div`
+  padding: 12px 24px;
+  border: none;
+  margin: 10px;
+  border-radius: 50px;
+  // background: white;
+  color: white;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  width: fit-content;
+  cursor: pointer;
+  transition: 0.4s ease;
+
+  &:hover {
+    background: white;
+    color: black;
+  }
+`;
+
+export const NavMenu = styled.nav`
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  position: absolute;
+  top: 100px;
+  right: 0;
+  background-color: white;
+  margin-right: 30px;
+  width: fit-content;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 10px 20px;
+
+      a {
+        text-decoration: none;
+        color: black;
+        display: block;
+
+        &:hover {
+          background-color: #f0f0f0;
+        }
+      }
+    }
+  }
+`;
 
 export const OptionButtonGroup = styled.div`
   display: flex;
-  flex-wrap: wrap;   /* To make buttons flow to the next line if needed */
-  gap: 10px;         /* Gap between buttons */
+  flex-wrap: wrap; /* To make buttons flow to the next line if needed */
+  gap: 10px; /* Gap between buttons */
+  justify-content: center;
 `;
 
 export const OptionButton = styled.button`
@@ -385,7 +506,8 @@ export const OptionButton = styled.button`
   border-radius: 50px;
   background: ${(props) => (props.selected ? "#00dbd8" : "transparent")};
   color: ${(props) => (props.selected ? "#0f1624" : "white")};
-  border: 1px solid ${(props) => (props.selected ? "#00dbd8" : "rgba(255, 255, 255, 0.33)")};
+  border: 1px solid
+    ${(props) => (props.selected ? "#00dbd8" : "rgba(255, 255, 255, 0.33)")};
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -398,5 +520,10 @@ export const OptionButton = styled.button`
 
   &:focus {
     outline: none;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 12px;
+    padding: 10px 18px;
   }
 `;

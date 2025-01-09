@@ -23,7 +23,7 @@ import {
 
 const Footer = () => {
   return (
-    <FooterWrapper>
+    <FooterWrapper id="footer">
       <LinkList>
         {/* <LinkColumn>
           <LinkTitle>Call</LinkTitle>
@@ -45,8 +45,7 @@ const Footer = () => {
       <SocialIconsContainer>
         <CompanyContainer>
           <Slogan>
-            <AiOutlineCopyrightCircle /> Divya Dhiman. All rights reserved. 2024
-            v1.3
+            2024 v1.4 Divya Dhiman. Template is free to use.
           </Slogan>
         </CompanyContainer>
         <SocialContainer>
@@ -65,7 +64,7 @@ const Footer = () => {
           <SocialIcons href="https://www.linkedin.com/in/divya-dhiman/">
             <AiFillLinkedin size="3rem" />
           </SocialIcons>
-          <SocialIcons href="https://drive.google.com/uc?export=download&id=17ImDETV1GuhI3PAiM36_N-M7rYcV8MZw">
+          <SocialIcons href="https://drive.google.com/uc?export=download&id=1Tt9SvMFmfwqWacJjwIL2NGXhtZHdxIE4">
             <IoDocumentAttach size="3rem" />
           </SocialIcons>
         </SocialContainer>

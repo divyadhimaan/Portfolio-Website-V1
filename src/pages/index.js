@@ -20,7 +20,7 @@ const Home = () => {
         <Hero />
         <BgAnimation />
       </Section>
-      <Timeline />
+      {/* <Timeline /> */}
       <Projects />
       {/* <Technologies /> */}
 
