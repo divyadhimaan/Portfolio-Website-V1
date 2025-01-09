@@ -156,7 +156,6 @@ export const HamburgerMenu = styled.div`
   transition: 0.4s ease;
   display: none;
   margin: 30px; 
-  alignItems: right;
 
   &:hover {
     background: #00dbd8;

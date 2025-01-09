@@ -48,7 +48,7 @@ const Header = () => {
         </Link>
       </Div1>
 
-      <HamburgerMenu onClick={toggleMenu}>
+      <HamburgerMenu style={{alignItems: "center",}} onClick={toggleMenu}>
         {isOpen ? (
           <>
             <AiOutlineClose size="3rem" />

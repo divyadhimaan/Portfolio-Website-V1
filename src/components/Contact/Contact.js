@@ -36,9 +36,10 @@ const Contact = () => {
   const options = [
     "Counsel",
     "Website Design",
+    "Interview Prep",
     "Web Development",
-    "Illustration",
-    "Graphic Design"
+    "Mock Interviews",
+    "Networking"
   ];
 
   const handleChange = (e) => {

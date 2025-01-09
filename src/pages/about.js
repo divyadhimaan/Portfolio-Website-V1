@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FormButton,
   Section,
@@ -7,13 +7,13 @@ import {
   HamburgerMenu,
   ButtonContainer,
   NavMenu,
-  BoldText
+  BoldText,
 } from "../styles/GlobalComponents";
 import {
   AiOutlineArrowUp,
   AiOutlineClose,
   AiOutlineMenu,
-  AiFillHome
+  AiFillHome,
 } from "react-icons/ai";
 import { Layout } from "../layout/Layout";
 import Head from "next/head";
@@ -23,10 +23,18 @@ import styles from "./About.module.css";
 import { NavLink } from "../components/Header/HeaderStyles";
 import Footer from "../components/Footer/Footer";
 
-
 const About = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const [showScroll, setShowScroll] = useState(false);
+
+  const checkScrollTop = () => {
+    if (!showScroll && window.scrollY > 200) {
+      setShowScroll(true);
+    } else if (showScroll && window.scrollY <= 200) {
+      setShowScroll(false);
+    }
+  };
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -34,6 +42,13 @@ const About = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  useEffect(() => {
+    window.addEventListener("scroll", checkScrollTop);
+    return () => {
+      window.removeEventListener("scroll", checkScrollTop);
+    };
+  }, [showScroll]);
 
   return (
     <>
@@ -55,7 +70,6 @@ const About = () => {
           )}
         </HamburgerMenu>
       </ButtonContainer>
-
       <NavMenu isOpen={isOpen}>
         <ul>
           <li>
@@ -114,22 +128,25 @@ const About = () => {
           you! ♡
         </SectionText>
       </Section>
-      <FormButton
-        style={{
-          position: "fixed",
-          bottom: "20px",
-          right: "20px",
-          borderRadius: "50%",
-          padding: "20px 24px",
-          margin: "0",
-          zIndex: 1000,
-        }}
-        onClick={scrollToTop}
-      >
-        <AiOutlineArrowUp />
-      </FormButton>
 
-      <Footer/>
+      {showScroll && (
+        <FormButton
+          style={{
+            position: "fixed",
+            bottom: "20px",
+            right: "20px",
+            borderRadius: "50%",
+            padding: "20px 24px",
+            margin: "0",
+            zIndex: 1000,
+            opacity: "70%",
+          }}
+          onClick={scrollToTop}
+        >
+          <AiOutlineArrowUp />
+        </FormButton>
+      )}
+      <Footer />
     </>
   );
 };

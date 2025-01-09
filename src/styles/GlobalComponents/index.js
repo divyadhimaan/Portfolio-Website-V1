@@ -38,13 +38,16 @@ export const SectionTitle = styled.h2`
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 16px;
+  // margin-bottom: 16px;
+  margin: 30px auto;
+
   padding: ${(props) => (props.main ? "40px 0 16px" : "0")};
 
   @media ${(props) => props.theme.breakpoints.md} {
     font-size: ${(props) => (props.main ? "56px" : "48px")};
     line-height: ${(props) => (props.main ? "56px" : "48px")};
-    margin-bottom: 12px;
+    // margin-bottom: 12px;
+    margin: 20px auto;
     padding: ${(props) => (props.main ? "40px 0 12px" : "0")};
   }
 
@@ -61,8 +64,8 @@ export const SectionTitle = styled.h2`
 `;
 
 export const SectionText = styled.p`
-width: max-content;
-max-width: 100%;
+  width: max-content;
+  max-width: 100%;
   font-size: 24px;
   line-height: 40px;
   margin-top: 20px;
@@ -78,13 +81,15 @@ max-width: 100%;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
+    max-width: 100%;
     font-size: 16px;
     line-height: 24px;
     padding-bottom: 10px;
     padding-right: 20px;
     text-align: center;
-    padding: 10px auto;
+    padding:0 10px;
     margin: 20px auto;
+    word-wrap: break-word;
   }
 `;
 
@@ -183,7 +188,6 @@ export const BoldText = styled.span`
   font-weight: bold;
   font-size: 3.5rem; /* Adjust the size as needed */
   color: white; /* Adjust the color as needed */
-
 
   @media (max-width: 768px) {
     font-size: 2.5rem;
@@ -315,7 +319,6 @@ export const LinkIconImg = styled.div`
   }
 `;
 
-
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -337,15 +340,21 @@ export const FormLabel = styled.label`
 export const FormRow = styled.div`
   display: flex;
   justify-content: center; /* Centers the inputs horizontally */
-  gap: 20px;              /* Adds space between the inputs */
-  width: 100%;            /* Make the group full width */
+  gap: 20px; /* Adds space between the inputs */
+  width: 100%; /* Make the group full width */
+
+  @media (max-width: 640px) {
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 0;
+  }
 `;
 
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column; /* Stack the label and input vertically */
   width: 100%; /* Adjust the width to fit side by side */
-  margin-bottom: 20px;
+  // margin-bottom: 10px;
 `;
 
 export const FormInput = styled.input`
@@ -398,14 +407,16 @@ export const MainButton = styled.button`
 
   @media (max-width: 640px) {
     margin: 10px auto;
+    font-size: 14px;
     width: 60%;
+    padding: 10px 16px;
   }
 `;
 
 export const FormButton = styled.button`
   padding: 12px 24px;
   border: none;
-  margin: 10px;
+  margin: 15px;
   border-radius: 50px;
   background: white;
   color: black;
@@ -421,6 +432,10 @@ export const FormButton = styled.button`
 
   &:focus {
     outline: none;
+  }
+  @media (max-width: 640px) {
+    font-size: 12px;
+    padding: 10px 18px;
   }
 
 `;
@@ -440,13 +455,13 @@ export const HamburgerMenu = styled.div`
   transition: 0.4s ease;
 
   &:hover {
-    background: white ;
+    background: white;
     color: black;
   }
 `;
 
 export const NavMenu = styled.nav`
-  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   position: absolute;
   top: 100px;
   right: 0;
@@ -478,11 +493,11 @@ export const NavMenu = styled.nav`
   }
 `;
 
-
 export const OptionButtonGroup = styled.div`
   display: flex;
-  flex-wrap: wrap;   /* To make buttons flow to the next line if needed */
-  gap: 10px;         /* Gap between buttons */
+  flex-wrap: wrap; /* To make buttons flow to the next line if needed */
+  gap: 10px; /* Gap between buttons */
+  justify-content: center;
 `;
 
 export const OptionButton = styled.button`
@@ -491,7 +506,8 @@ export const OptionButton = styled.button`
   border-radius: 50px;
   background: ${(props) => (props.selected ? "#00dbd8" : "transparent")};
   color: ${(props) => (props.selected ? "#0f1624" : "white")};
-  border: 1px solid ${(props) => (props.selected ? "#00dbd8" : "rgba(255, 255, 255, 0.33)")};
+  border: 1px solid
+    ${(props) => (props.selected ? "#00dbd8" : "rgba(255, 255, 255, 0.33)")};
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -504,5 +520,10 @@ export const OptionButton = styled.button`
 
   &:focus {
     outline: none;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 12px;
+    padding: 10px 18px;
   }
 `;
