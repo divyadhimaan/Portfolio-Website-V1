@@ -45,8 +45,7 @@ const Footer = () => {
       <SocialIconsContainer>
         <CompanyContainer>
           <Slogan>
-            <AiOutlineCopyrightCircle /> Divya Dhiman. All rights reserved. 2024
-            v1.3
+            2024 v1.4 Divya Dhiman. Template is free to use.
           </Slogan>
         </CompanyContainer>
         <SocialContainer>
