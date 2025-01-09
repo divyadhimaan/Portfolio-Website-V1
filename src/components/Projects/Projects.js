@@ -10,7 +10,7 @@ const ProjectContainer = styled.div`
   flex-direction: column;
   gap: 20px;
   padding: 0 20px 0 20px;
-  margin-bottom: 40px;
+  margin: 40px 0;
 `;
 
 const ProjectCard = styled.div`
@@ -18,6 +18,7 @@ const ProjectCard = styled.div`
   background: white;
   width: 100%; 
   height: 400px; 
+  margin-bottom: 20px;
   border-radius: 10px;
   overflow: hidden; 
   cursor: pointer;
@@ -135,7 +136,7 @@ const Projects = () => {
     <Section id="projects">
       <SectionTitle >Featured Work</SectionTitle>
       <ProjectContainer>
-        {/* {projectList.map((project, index) => (
+        {projectList.map((project, index) => (
           <ProjectCard key={index}>
             <ProjectImage src={project.imageUrl} alt={project.title} />
             <ViewButton onClick={() => window.open(project.link, "_blank")}>
@@ -146,7 +147,7 @@ const Projects = () => {
               <ProjectDescription>{project.description}</ProjectDescription>
             </ProjectInfo>
           </ProjectCard>
-        ))} */}
+        ))}
       </ProjectContainer>
     </Section>
   );
