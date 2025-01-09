@@ -2194,6 +2194,11 @@ murmurhash@^2.0.0:
   resolved "https://registry.npmjs.org/murmurhash/-/murmurhash-2.0.1.tgz"
   integrity sha512-5vQEh3y+DG/lMPM0mCGPDnyV8chYg/g7rl6v3Gd8WMF9S429ox3Xk8qrk174kWhG767KQMqqxLD1WnGd77hiew==
 
+n@^10.1.0:
+  version "10.1.0"
+  resolved "https://registry.npmjs.org/n/-/n-10.1.0.tgz"
+  integrity sha512-P6uzqlGmqh1eDiMjob/5QR3INWuYdaEJP+yb5tThxxQYdS2fxaRGzavNfR+1gVf8K4yIWeVdzi48hGKJLUHg2Q==
+
 nanoid@^3.1.22:
   version "3.3.7"
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.3.7.tgz"

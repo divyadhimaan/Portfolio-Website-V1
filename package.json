@@ -10,6 +10,7 @@
   "dependencies": {
     "@netlify/plugin-nextjs": "^4.2.7",
     "emailjs-com": "^3.2.0",
+    "n": "^10.1.0",
     "next": "10.2.3",
     "nodemon": "^3.1.7",
     "react": "17.0.2",
