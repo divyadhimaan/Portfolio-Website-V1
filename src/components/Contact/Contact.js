@@ -24,6 +24,7 @@ const Contact = () => {
     options: [],
   });
 
+  const [loading, setLoading] = useState(false);
 
   const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
   const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
@@ -60,6 +61,8 @@ const Contact = () => {
       return;
     }
 
+    setLoading(true);
+
     try {
       // Send email using EmailJS
       const templateParams = {
@@ -83,6 +86,8 @@ const Contact = () => {
       setModalType("error");
       setIsModalOpen(true); // Show error modal
     }
+
+    setLoading(false);
   };
 
   const handleOptionClick = (option) => {
@@ -161,8 +166,14 @@ const Contact = () => {
           </OptionButtonGroup>
         </InputContainer>
 
-        <FormButton type="submit">Let's chat</FormButton>
+        {/* <FormButton type="submit" >Let's chat</FormButton> */}
+
+
+        <FormButton type="submit" disabled={loading}>
+          {loading ? "Submitting..." : "Let's chat"}
+        </FormButton>
       </Form>
+
 
       {/* Render the modal */}
       {isModalOpen && (

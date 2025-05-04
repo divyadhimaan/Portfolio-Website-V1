@@ -8,8 +8,6 @@ import {
   AiOutlineClose,
 } from "react-icons/ai";
 import { NavMenu } from "../../styles/GlobalComponents";
-import { SiLeetcode } from "react-icons/si";
-import { IoDocumentAttach } from "react-icons/io5";
 import { DiCssdeck } from "react-icons/di";
 
 import {
@@ -33,7 +31,7 @@ const Header = () => {
   return (
     <Container>
       <Div1>
-        <Link href="/">
+        {/* <Link href="/">
           <a
             style={{
               display: "flex",
@@ -45,6 +43,20 @@ const Header = () => {
             <DiCssdeck size="4rem" />
             <Span>Portfolio</Span>
           </a>
+        </Link> */}
+
+        <Link href="/" style={{ textDecoration: 'none' }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              color: "white",
+              marginBottom: "20px",
+            }}
+          >
+            <DiCssdeck size="4rem" />
+            <Span>Portfolio</Span>
+          </div>
         </Link>
       </Div1>
 

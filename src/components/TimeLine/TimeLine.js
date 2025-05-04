@@ -93,7 +93,7 @@ const Timeline = () => {
         Beyond the world of code, I find joy in exploring hiking trails,
         contributing to open-source communities, and expressing my creativity
         through painting. Feel free to check out my portfolio or drop me a
-        message if you’re interested in collaborating. I’d love to connect! ♡
+        message if you’re interested in collaborating. I’d love to connect!
       </SectionText>
 
       {/* <CarouselContainer ref={carouselRef} onScroll={handleScroll}>

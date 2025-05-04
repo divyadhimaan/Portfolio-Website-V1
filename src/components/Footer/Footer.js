@@ -58,10 +58,10 @@ const Footer = () => {
           <SocialIcons href="https://leetcode.com/u/divyadhimaan/" target="_blank" rel="noopener noreferrer">
             <SiLeetcode size="3rem" />
           </SocialIcons>
-          <SocialIcons href="https://github.com/divyadhimaan">
+          <SocialIcons href="https://github.com/divyadhimaan" target="_blank">
             <AiFillGithub size="3rem" />
           </SocialIcons>
-          <SocialIcons href="https://www.linkedin.com/in/divya-dhiman/">
+          <SocialIcons href="https://www.linkedin.com/in/divya-dhiman/" target="_blank">
             <AiFillLinkedin size="3rem" />
           </SocialIcons>
           <SocialIcons href="https://drive.google.com/uc?export=download&id=1Tt9SvMFmfwqWacJjwIL2NGXhtZHdxIE4">
