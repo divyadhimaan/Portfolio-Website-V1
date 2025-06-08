@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Section, SectionTitle } from "../../styles/GlobalComponents";
-import { FiArrowUpRight } from "react-icons/fi";
+import { LuPresentation } from "react-icons/lu";
+import { FaCode } from "react-icons/fa6";
+
 import { projectList } from "../../constants/constants";
 
 const ProjectContainer = styled.div`
@@ -76,7 +78,32 @@ const ViewButton = styled.button`
   }
 `;
 
+const DemoButton = styled.button`
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  background-color: ${(props) => props.theme.colors.background1};
+  border-radius: 50%;
+  border: none; 
+  cursor: pointer;
+  color: white;
+  font-size: 32px;
+  width: 40px; 
+  height: 40px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  transition: color 0.3s;
+
+  &:hover {
+    color: ${(props) =>
+      props.theme.colors.background1}; 
+    background-color: white;
+  }
+`;
+
 const Projects = () => {
+  const [showDemo, setShowDemo] = useState(true);
   return (
     <Section id="projects">
       <SectionTitle>Featured Work</SectionTitle>
@@ -84,9 +111,16 @@ const Projects = () => {
         {projectList.map((project, index) => (
           <ProjectCard key={index}>
             <ProjectImage src={project.imageUrl} alt={project.title} />
-            <ViewButton onClick={() => window.open(project.link, "_blank")}>
-              <FiArrowUpRight />
+            <ViewButton onClick={() => window.open(project.codeLink, "_blank")}>
+              <FaCode size={20}/>
             </ViewButton>
+            {
+              project.demoLink &&
+                <DemoButton onClick={() => window.open(project.demoLink, "_blank")}>
+                  <LuPresentation size={20} />
+                </DemoButton>
+            }
+            
             <ProjectInfo>
               <ProjectTitle>{project.title}</ProjectTitle>
               <ProjectDescription>{project.description}</ProjectDescription>
