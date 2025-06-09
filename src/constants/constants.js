@@ -8,12 +8,20 @@ export const projectList = [
     id: 0,
   },
   {
+    title: "watchEm",
+    description: "A full-stack movie recommendation and playlist management web app that allows users to discover, organize, and share their favorite movies effortlessly.",
+    imageUrl: "/images/watchem.png",
+    codeLink: "https://github.com/divyadhimaan/watch-em",
+    demoLink: "",
+    id: 0,
+  },
+  {
     title: "sparkGive",
     description: "This website, developed for the Spark Foundation, integrates Razorpay for seamless payment processing. Users can easily select the amount they wish to donate and choose from various payment methods, including UPI (Google Pay, PayTM, PhonePe), cards, UPI/QR, net banking, and ICICI Pay Later.",
     imageUrl: "/images/sparkGive.jpg",
     codeLink: "https://github.com/divyadhimaan/sparkGive",
     demoLink: "https://my-donations-app.netlify.app/",
-    id: 1,
+    id: 2,
   },
   {
     title: "campusCart",
@@ -21,7 +29,7 @@ export const projectList = [
     imageUrl: "/images/campusCart.jpg",
     codeLink: "https://github.com/divyadhimaan/campusCart",
     demoLink: "",
-    id: 2,
+    id: 3,
   },
 
 ];
