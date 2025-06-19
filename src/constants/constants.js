@@ -13,7 +13,15 @@ export const projectList = [
     imageUrl: "/images/watchem.png",
     codeLink: "https://github.com/divyadhimaan/watch-em",
     demoLink: "",
-    id: 0,
+    id: 1,
+  },
+  {
+    title: "dBot",
+    description: "D-bot is an AI-powered assistant designed to help learners master Data Structures and Algorithms (DSA). It tracks progress, suggests relevant topics, answers interview prep questions, and offers motivating feedback to keep learners focused and on track. With personalized guidance and support, D-bot helps build a strong DSA foundation and prepares users for technical interviews.",
+    imageUrl: "/images/dbot.png",
+    codeLink: "https://github.com/divyadhimaan/dsa-progress-chatbot",
+    demoLink: "https://d-bot-jet.vercel.app/",
+    id: 2,
   },
   {
     title: "sparkGive",
@@ -21,7 +29,7 @@ export const projectList = [
     imageUrl: "/images/sparkGive.jpg",
     codeLink: "https://github.com/divyadhimaan/sparkGive",
     demoLink: "https://my-donations-app.netlify.app/",
-    id: 2,
+    id: 3,
   },
   {
     title: "campusCart",
@@ -29,7 +37,7 @@ export const projectList = [
     imageUrl: "/images/campusCart.jpg",
     codeLink: "https://github.com/divyadhimaan/campusCart",
     demoLink: "",
-    id: 3,
+    id: 4,
   },
 
 ];
